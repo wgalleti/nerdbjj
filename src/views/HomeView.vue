@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import ThanMore from '../components/ThanMore.vue'
 
 const isLoaded = ref(false)
 
@@ -80,6 +81,7 @@ onMounted(() => {
 
     <!-- About Section -->
     <section id="sobre" class="section bg-bjj-gray scroll-animate">
+      <ThanMore />
       <div class="container">
         <div class="section-header">
           <h2 class="h2 gradient-text">Por que este e-book é diferente?</h2>
