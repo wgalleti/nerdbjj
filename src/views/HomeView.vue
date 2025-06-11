@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Sobre from '../components/Sobre.vue'
+import Depoimentos from '../components/Depoimentos.vue'
+import VendasCounter from '../components/VendasCounter.vue'
 import { useScrollAnimations } from '../composables/useScrollAnimations'
 
 const isLoaded = ref(false)
@@ -33,7 +35,7 @@ useScrollAnimations(isLoaded)
           </div>
           <div class="hero-image slide-in-right">
             <img
-              src="/ebook-cover.jpeg"
+              src="/ebook-cover.png"
               alt="Capa do E-book: O que não me falaram sobre o Jiu-Jitsu"
               class="ebook-cover"
             />
@@ -150,6 +152,9 @@ useScrollAnimations(isLoaded)
       </div>
     </section>
 
+    <Depoimentos />
+
+    <VendasCounter />
 
     <!-- CTA Section -->
     <section id="comprar" class="section scroll-animate">
@@ -196,7 +201,7 @@ useScrollAnimations(isLoaded)
             </div>
 
             <a href="https://pay.kiwify.com.br/LNrtaro" class="btn btn-primary btn-cta btn-pulse">
-              Comprar Agora
+              SIM, EU QUERO EVOLUIR NO JIU-JITSU
             </a>
 
             <div class="payment-note">
