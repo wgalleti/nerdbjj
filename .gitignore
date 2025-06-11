@@ -29,7 +29,6 @@ ENV/
 
 # IDE
 .idea/
-.vscode/
 *.swp
 *.swo
 .DS_Store
@@ -75,4 +74,4 @@ var/
 wheels/
 *.egg-info/
 .installed.cfg
-*.egg 
+*.egg

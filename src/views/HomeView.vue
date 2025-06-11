@@ -1,48 +1,11 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import ThanMore from '../components/ThanMore.vue'
+import { ref } from 'vue'
+import Sobre from '../components/Sobre.vue'
+import { useScrollAnimations } from '../composables/useScrollAnimations'
 
 const isLoaded = ref(false)
+useScrollAnimations(isLoaded)
 
-onMounted(() => {
-  // Trigger animations after component is mounted
-  setTimeout(() => {
-    isLoaded.value = true
-  }, 100)
-
-  // Smooth scroll behavior for anchor links
-  const links = document.querySelectorAll('a[href^="#"]')
-  links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault()
-      const target = document.querySelector(link.getAttribute('href') as string)
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
-      }
-    })
-  })
-
-  // Intersection Observer for scroll animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in')
-      }
-    })
-  }, observerOptions)
-
-  // Observe all sections for scroll animations
-  const sections = document.querySelectorAll('.section, .hero-section')
-  sections.forEach(section => observer.observe(section))
-})
 </script>
 
 <template>
@@ -81,7 +44,7 @@ onMounted(() => {
 
     <!-- About Section -->
     <section id="sobre" class="section bg-bjj-gray scroll-animate">
-      <ThanMore />
+      <Sobre />
       <div class="container">
         <div class="section-header">
           <h2 class="h2 gradient-text">Por que este e-book é diferente?</h2>
