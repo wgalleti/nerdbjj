@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Sobre from '../components/Sobre.vue'
+import Bio from '../components/Bio.vue'
 import Depoimentos from '../components/Depoimentos.vue'
 import VendasCounter from '../components/VendasCounter.vue'
 import { useScrollAnimations } from '../composables/useScrollAnimations'
@@ -43,6 +44,7 @@ useScrollAnimations(isLoaded)
         </div>
       </div>
     </section>
+    <Bio />
 
     <!-- About Section -->
     <section id="sobre" class="section bg-bjj-gray scroll-animate">
@@ -229,7 +231,6 @@ useScrollAnimations(isLoaded)
 html {
   scroll-behavior: smooth;
 }
-
 /* Base animations */
 .landing-page {
   opacity: 0;
